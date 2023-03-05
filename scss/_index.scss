@@ -1,0 +1,153 @@
+/* SERVICIOS */
+
+.carousel {
+  box-shadow: $shadow;
+  @include respond-to("xsm") {
+    margin-bottom: 2rem;
+  }
+}
+
+/* TARJETAS */
+.galeria {
+  transform: translateY(-10%);
+  @include respond-to("sm") {
+    margin-bottom: 1.5rem;
+  }
+}
+.cards-container {
+  height: 25%;
+  overflow: hidden;
+
+  .cards {
+    color: white;
+    overflow: hidden;
+    transition: transform $tiempo-largo ease;
+    padding: 0 !important;
+
+    img {
+      z-index: 1;
+    }
+
+    &:hover,
+    &:focus-within {
+      z-index: 3;
+      filter: grayscale(0%);
+
+      @include respond-to("xsm") {
+        transform: scale(1.05);
+      }
+      @include respond-to("sm") {
+        transform: scale(1.05);
+      }
+      @include respond-to("md") {
+        transform: scale(1.05);
+      }
+    }
+
+    &:hover .card__info {
+      opacity: 1;
+      transition-delay: 0.1s;
+    }
+    .card__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity $tiempo-largo ease-in-out;
+      font-weight: 400;
+      letter-spacing: 0.05rem;
+
+      @include respond-to("xsm") {
+        height: 150px;
+        font-size: smaller;
+      }
+      @include respond-to("sm") {
+        height: 175px;
+        font-size: small;
+      }
+      @include respond-to("md") {
+        height: 225px;
+        font-size: smaller;
+      }
+      @include respond-to("lg") {
+        height: 300px;
+      }
+
+      h3 {
+        padding: 0.5rem;
+        width: fit-content;
+        background-color: rgba(0, 0, 0, 0.35);
+      }
+      p {
+        padding: 0.5rem;
+        width: fit-content;
+        background-color: rgba(0, 0, 0, 0.35);
+      }
+    }
+  }
+  .galeria {
+    filter: grayscale(100%);
+  }
+  .img1 {
+    background-image: url(../imgs/shows/fiesta3.png);
+    @include card-pos();
+  }
+
+  .img2 {
+    background-image: url(../imgs/arq/casa8.jpg);
+    @include card-pos();
+  }
+
+  .img3 {
+    background-image: url(../imgs/arq/casa7.jpg);
+    @include card-pos();
+  }
+
+  .img4 {
+    background-image: url(../imgs/arq/casa6.jpg);
+    @include card-pos();
+  }
+
+  .img5 {
+    background-image: url(../imgs/arq/edificio.jpg);
+    @include card-pos();
+  }
+
+  .img6 {
+    background-image: url(../imgs/arq/casa2.jpg);
+    @include card-pos();
+  }
+
+  .img7 {
+    background-image: url(../imgs/arq/casa5.jpg);
+    @include card-pos();
+  }
+
+  .img8 {
+    background-image: url(../imgs/shows/fiesta1.png);
+    @include card-pos();
+  }
+}
+
+/////llamado a la accion/////
+.accion {
+  background-color: $colorsecundario;
+  color: $textosecundario;
+  h3 {
+    font-size: 120%;
+  }
+  p {
+    font-size: 90%;
+  }
+  .btn {
+    color: $textosecundario;
+    width: fit-content;
+    border-width: 2px;
+    border-color: black;
+    &:hover {
+      color: $textoprimario;
+      background-color: black;
+    }
+  }
+}
